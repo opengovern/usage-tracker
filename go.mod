@@ -1,6 +1,8 @@
 module github.com/opengovern/usage-tracker
 
-go 1.22
+go 1.22.0
+
+toolchain go1.23.2
 
 require (
 	github.com/labstack/echo/v4 v4.12.0
