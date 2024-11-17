@@ -12,7 +12,7 @@ RUN go mod download
 COPY . .
 
 # Build the Go application
-RUN CGO_ENABLED=0 GOOS=linux go build -o myapp .
+RUN CGO_ENABLED=0 GOOS=linux go build -o usage-tracker .
 
 # Stage 2: Final stage
 FROM alpine:edge
@@ -21,10 +21,10 @@ FROM alpine:edge
 WORKDIR /app
 
 # Copy the binary from the build stage
-COPY --from=build /app/myapp .
+COPY --from=build /app/usage-tracker .
 
 # Set the timezone and install CA certificates
 RUN apk --no-cache add ca-certificates tzdata
 
 # Set the entrypoint command
-ENTRYPOINT ["/app/myapp"]
+ENTRYPOINT ["/app/usage-tracker"]
