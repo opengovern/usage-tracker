@@ -12,7 +12,7 @@ RUN go mod download
 COPY . .
 
 # Build the Go application
-RUN CGO_ENABLED=0 GOOS=linux go build -o usage-tracker .
+RUN  go build -o usage-tracker .
 
 # Stage 2: Final stage
 FROM alpine:edge
