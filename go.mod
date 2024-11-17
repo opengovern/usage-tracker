@@ -4,7 +4,7 @@ go 1.23
 
 require (
 	github.com/labstack/echo/v4 v4.12.0
-	github.com/opengovern/og-util v1.1.6
+	github.com/opengovern/og-util v1.1.7
 	github.com/spf13/cobra v1.8.1
 	go.opentelemetry.io/otel v1.32.0
 	go.opentelemetry.io/otel/trace v1.32.0
@@ -32,24 +32,22 @@ require (
 	github.com/jackc/puddle/v2 v2.2.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
-	github.com/klauspost/compress v1.17.9 // indirect
 	github.com/knadh/koanf/maps v0.1.1 // indirect
 	github.com/knadh/koanf/parsers/toml v0.1.0 // indirect
 	github.com/knadh/koanf/providers/env v0.1.0 // indirect
 	github.com/knadh/koanf/providers/file v0.1.0 // indirect
 	github.com/knadh/koanf/providers/structs v0.1.0 // indirect
-	github.com/knadh/koanf/v2 v2.1.1 // indirect
+	github.com/knadh/koanf/v2 v2.1.0 // indirect
 	github.com/labstack/gommon v0.4.2 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
-	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
-	github.com/prometheus/client_golang v1.20.4 // indirect
+	github.com/prometheus/client_golang v1.19.1 // indirect
 	github.com/prometheus/client_model v0.6.1 // indirect
-	github.com/prometheus/common v0.55.0 // indirect
+	github.com/prometheus/common v0.53.0 // indirect
 	github.com/prometheus/procfs v0.15.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
@@ -59,12 +57,12 @@ require (
 	go.opentelemetry.io/otel/metric v1.32.0 // indirect
 	go.opentelemetry.io/otel/sdk v1.28.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	golang.org/x/crypto v0.27.0 // indirect
-	golang.org/x/net v0.29.0 // indirect
-	golang.org/x/sync v0.8.0 // indirect
-	golang.org/x/sys v0.25.0 // indirect
-	golang.org/x/text v0.18.0 // indirect
-	golang.org/x/time v0.6.0 // indirect
+	golang.org/x/crypto v0.25.0 // indirect
+	golang.org/x/net v0.27.0 // indirect
+	golang.org/x/sync v0.7.0 // indirect
+	golang.org/x/sys v0.22.0 // indirect
+	golang.org/x/text v0.16.0 // indirect
+	golang.org/x/time v0.5.0 // indirect
 	google.golang.org/protobuf v1.34.2 // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0 // indirect
 	gorm.io/driver/postgres v1.5.4 // indirect
