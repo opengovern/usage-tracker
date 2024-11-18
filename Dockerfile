@@ -12,7 +12,7 @@ RUN go mod download
 COPY . .
 
 # Build the Go application
-RUN  go build -o usage-tracker ./main.go
+RUN  go build -o usage-tracker .
 
 # Stage 2: Final stage
 FROM alpine:edge
