@@ -2,7 +2,8 @@ package service
 
 import (
 	"context"
-
+	"encoding/json"
+	"github.com/jackc/pgtype"
 	shared_entities "github.com/opengovern/og-util/pkg/api/shared-entities"
 	"github.com/opengovern/usage-tracker/config"
 	"github.com/opengovern/usage-tracker/db/model"
@@ -27,12 +28,29 @@ func NewInformationService(cfg config.InformationConfig, logger *zap.Logger, csp
 
 func (s *InformationService) RecordUsage(ctx context.Context, req shared_entities.CspmUsageRequest) error {
 
+	integrationTypeCountData, err := json.Marshal(req.IntegrationTypeCount)
+	if err != nil {
+		return err
+	}
+	integrationTypeCountJsonb := pgtype.JSONB{}
+	err = integrationTypeCountJsonb.Set(integrationTypeCountData)
+	if err != nil {
+		return err
+	}
+
+	if integrationTypeCountJsonb.Status != pgtype.Present {
+		err = integrationTypeCountJsonb.Set("{}")
+		if err != nil {
+			return err
+		}
+	}
+
 	m := model.CspmUsage{
 		InstallId:            req.InstallId,
 		GatherTimestamp:      req.GatherTimestamp,
 		Hostname:             req.Hostname,
 		NumberOfUsers:        req.NumberOfUsers,
-		IntegrationTypeCount: req.IntegrationTypeCount,
+		IntegrationTypeCount: integrationTypeCountJsonb,
 	}
 
 	if err := s.csmpUsageRepo.Create(ctx, &m); err != nil {
