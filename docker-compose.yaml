@@ -6,7 +6,7 @@ services:
         - "8080:8080"
         environment:
           - INFORMATION_HTTP__ADDRESS=0.0.0.0:8080
-          - INFORMATION_POSTGRES__HOST=postgres
+          - INFORMATION_POSTGRES__HOST=postgres-uasage
           - INFORMATION_POSTGRES__PORT=5432
           - INFORMATION_POSTGRES__DB=information
           - INFORMATION_POSTGRES__USERNAME=information

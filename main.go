@@ -46,16 +46,7 @@ func main() {
 }
 
 func Command() *cobra.Command {
-	cnf := koanf.Provide("information", config.InformationConfig{
-		Postgres: koanf.Postgres{
-			Host:     "localhost",
-			Port:     "5432",
-			Username: "postgres",
-		},
-		Http: koanf.HttpServer{
-			Address: "localhost:8000",
-		},
-	})
+	cnf := koanf.Provide("information", config.InformationConfig{})
 
 	cmd := &cobra.Command{
 		RunE: func(cmd *cobra.Command, _ []string) error {
