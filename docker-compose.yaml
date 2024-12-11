@@ -13,13 +13,13 @@ services:
           - INFORMATION_POSTGRES__PASSWORD=${PG_PASSWORD}
           - INFORMATION_POSTGRES_SSL_MODE=disable
         depends_on:
-        - postgres
+        - postgres-uasage
         networks:
         - og-network1
         restart: always
     postgres-uasage:
-        image: postgres:14
-        container_name: postgres
+        image: postgres:latest
+        container_name: postgres-usage
         volumes:
           - pgdata-usage:/var/lib/postgresql/data
         environment:
