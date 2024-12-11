@@ -1,6 +1,6 @@
 services:
     information:
-        image: ghcr.io/opengovernance-io/information-service:v0.420.0-dev
+        build: .
         container_name: information
         ports:
         - "8080:8080"
@@ -15,28 +15,24 @@ services:
         depends_on:
         - postgres
         networks:
-        - kaytu-network
+        - og-network1
         restart: always
-    postgres:
+    postgres-uasage:
         image: postgres:14
         container_name: postgres
         volumes:
-          - pgdata:/var/lib/postgresql/data
+          - pgdata-usage:/var/lib/postgresql/data
         environment:
         - POSTGRES_USER=information
         - POSTGRES_PASSWORD=${PG_PASSWORD}
         - POSTGRES_DB=information
         networks:
-        - kaytu-network
+        - og-network1
         restart: always
 volumes:
-    pgdata:
-        driver: local
-        driver_opts:
-          type: none
-          device: "/home/ec2-user/information-service/pgdata"
-          o: bind
+    pgdata-usage:
+       
 
 networks:
-    kaytu-network:
+    og-network1:
         driver: bridge
